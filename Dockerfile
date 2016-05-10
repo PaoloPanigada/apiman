@@ -23,6 +23,7 @@ RUN cd $HOME && \
 ADD postgresql-9.4.1208.jar $JBOSS_HOME/standalone/deployments 
 ADD standalone-apiman.xml $JBOSS_HOME/standalone/configuration 
 ADD apiman.properties $JBOSS_HOME/standalone/configuration 
+ADD apiman-ds.xml $JBOSS_HOME/standalone/configuration
 RUN RUN $JBOSS_HOME/bin/add-user.sh admin P@ssw0rd10 --silent 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown 
 ENV LAUNCH_JBOSS_IN_BACKGROUND true 
